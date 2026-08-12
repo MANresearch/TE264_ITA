@@ -230,6 +230,33 @@ def inject_css():
         color: {TXT} !important;
     }}
 
+    /* Fallback for environments where Streamlit's Material Symbols font is
+       unavailable and the collapse control renders its icon name as text. */
+    button[data-testid="stSidebarCollapseButton"],
+    [data-testid="stSidebarCollapseButton"] > button {{
+        font-size: 0 !important;
+    }}
+    button[data-testid="stSidebarCollapseButton"]::after,
+    [data-testid="stSidebarCollapseButton"] > button::after {{
+        content: "‹";
+        font-family: Arial, sans-serif;
+        font-size: 1.55rem;
+        line-height: 1;
+        color: {TXT} !important;
+    }}
+    button[data-testid="stSidebarCollapsedControl"],
+    [data-testid="stSidebarCollapsedControl"] > button {{
+        font-size: 0 !important;
+    }}
+    button[data-testid="stSidebarCollapsedControl"]::after,
+    [data-testid="stSidebarCollapsedControl"] > button::after {{
+        content: "›";
+        font-family: Arial, sans-serif;
+        font-size: 1.55rem;
+        line-height: 1;
+        color: {TXT} !important;
+    }}
+
     /* ── Scrollbar ────────────────────────────────────────────── */
     ::-webkit-scrollbar {{
         width: 8px;
