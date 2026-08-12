@@ -17,14 +17,15 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import theme
-import pages.overview as overview
-import pages.fuzzy_variables as fuzzy_variables
-import pages.rule_bases as rule_bases
-import pages.mamdani as mamdani
-import pages.copulas as copulas
-import pages.monte_carlo as monte_carlo
-import pages.possibility as possibility
-import pages.integration as integration
+import application_walkthrough
+import overview
+import fuzzy_variables
+import rule_bases
+import mamdani
+import copulas
+import monte_carlo
+import possibility
+import integration
 
 st.set_page_config(
     page_title="TE264 · Fuzzy CDO Risk",
@@ -36,6 +37,7 @@ st.set_page_config(
 st.markdown(theme.inject_css(), unsafe_allow_html=True)
 
 PAGINAS = {
+    "Application Walkthrough (EN)": application_walkthrough,
     "Visão Geral & Tese":            overview,
     "1 · Variáveis Fuzzy":           fuzzy_variables,
     "2 · Bases de Regras":           rule_bases,

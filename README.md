@@ -25,19 +25,20 @@ São abordagens complementares.
 ```
 cdo_fuzzy_app/
 ├── app.py                       # navegação principal
+├── application_walkthrough.py   # walkthrough em inglês para a candidatura
 ├── fuzzy_core.py                # motor Mamdani (núcleo testado)
 ├── theme.py                     # estilo dark IBM Plex + helpers
 ├── te264_historical_data.py     # dados calibrados (Moody's, Fed, Yale, FDIC, BIS)
 ├── requirements.txt
-└── pages/
-    ├── overview.py              # Visão geral & tese
-    ├── fuzzy_variables.py       # 1 · funções de pertinência triangulares
-    ├── rule_bases.py            # 2 · três bases de regras + convergência
-    ├── mamdani.py               # 3 · inferência passo a passo + superfície 3D
-    ├── copulas.py               # 4 · dependência Gaussiana vs t-Student
-    ├── monte_carlo.py           # 5 · Monte Carlo de 2ª ordem
-    ├── possibility.py           # 6 · teoria da possibilidade + p-boxes
-    └── integration.py           # 7 · IRC fuzzy + cópula no portfólio CDO
+├── overview.py                  # Visão geral & tese
+├── fuzzy_variables.py           # 1 · funções de pertinência triangulares
+├── rule_bases.py                # 2 · três bases de regras + convergência
+├── mamdani.py                   # 3 · inferência passo a passo + superfície 3D
+├── copulas.py                   # 4 · dependência Gaussiana vs t-Student
+├── monte_carlo.py               # 5 · Monte Carlo de 2ª ordem
+├── possibility.py               # 6 · teoria da possibilidade + p-boxes
+├── integration.py               # 7 · IRC fuzzy + cópula no portfólio CDO
+└── tests/test_fuzzy_core.py     # testes do motor e da geração do portfólio
 ```
 
 ## Conceitos cobertos (objetivos de aprendizagem da disciplina)
@@ -65,6 +66,24 @@ cdo_fuzzy_app/
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+```
+
+## Application walkthrough (English)
+
+The first page of the app is an English model walkthrough prepared for a Senior
+Quantitative Analyst application. It documents data provenance, preparation, the
+unit of observation, model selection, alternatives, validation, limitations,
+production status, and how the prototype would be redesigned around a real
+loan-month tape.
+
+The portfolio included in this repository is **synthetic and calibrated to public
+historical references**. It is not an observed lender loan tape, and the walkthrough
+makes that limitation explicit.
+
+## Testes
+
+```bash
+python -m unittest discover -s tests -v
 ```
 
 ## Fontes de calibração
