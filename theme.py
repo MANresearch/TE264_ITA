@@ -245,11 +245,13 @@ def inject_css():
         color: {TXT} !important;
     }}
     button[data-testid="stSidebarCollapsedControl"],
-    [data-testid="stSidebarCollapsedControl"] > button {{
+    [data-testid="stSidebarCollapsedControl"] > button,
+    button[data-testid="stExpandSidebarButton"] {{
         font-size: 0 !important;
     }}
     button[data-testid="stSidebarCollapsedControl"]::after,
-    [data-testid="stSidebarCollapsedControl"] > button::after {{
+    [data-testid="stSidebarCollapsedControl"] > button::after,
+    button[data-testid="stExpandSidebarButton"]::after {{
         content: "›";
         font-family: Arial, sans-serif;
         font-size: 1.55rem;
