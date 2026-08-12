@@ -236,6 +236,10 @@ def inject_css():
     [data-testid="stSidebarCollapseButton"] > button {{
         font-size: 0 !important;
     }}
+    button[data-testid="stSidebarCollapseButton"] span,
+    [data-testid="stSidebarCollapseButton"] > button span {{
+        display: none !important;
+    }}
     button[data-testid="stSidebarCollapseButton"]::after,
     [data-testid="stSidebarCollapseButton"] > button::after {{
         content: "‹";
@@ -248,6 +252,11 @@ def inject_css():
     [data-testid="stSidebarCollapsedControl"] > button,
     button[data-testid="stExpandSidebarButton"] {{
         font-size: 0 !important;
+    }}
+    button[data-testid="stSidebarCollapsedControl"] span,
+    [data-testid="stSidebarCollapsedControl"] > button span,
+    button[data-testid="stExpandSidebarButton"] span {{
+        display: none !important;
     }}
     button[data-testid="stSidebarCollapsedControl"]::after,
     [data-testid="stSidebarCollapsedControl"] > button::after,
